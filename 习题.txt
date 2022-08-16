@@ -1,0 +1,28 @@
+要求：
+   呈现出左右同时向中间缩进的效果直到所有字符缩进完
+   welcome to bit!!!!
+   ##################
+        wel############!!!
+   .....
+   welcome to bit!!!!
+答：
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h> 库函数 stelen 要引用头文件
+int main()
+{
+       char arr1[] = "welcome to bit!!!!"; 定义一个 char 类型的数组
+       char arr2[] = "##################";
+       int z = 0;//左下标
+       int y = strlen(arr1)-1;//右下标
+       while(z<=y)判断条件左下标小于等于右下标，然后进入循环，条件不满足则退出。
+       {
+         arr2[z] = arr1[z];将 arr1 的左下标赋值给 arr2 的左下标
+       arr2[y] = arr1[y];将 arr1 的右下标赋值给 arr2 的右下标
+       printf("%s\n",arr2);  用 %s 将 arr2 的字符打印出来
+       z++; 左下标向右缩进
+       y--; 右下标向左缩进
+       }
+       return 0;
+}
